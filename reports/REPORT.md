@@ -1,6 +1,6 @@
 # Lab 25B — Report
 
-**Họ tên / nhóm:** Đặng Quốc Cường (2A202602466)  **Commit:** `01256ae`  **Điểm tự động (`make grade`):** 84 / 88 
+**Họ tên / nhóm:** Đặng Quốc Cường (2A202602466)  **Commit:** `fe3324c`  **Điểm tự động (`make grade`):** 84 / 88 
 
 > Mọi nhận định phải có số. Dán số từ `reports/gameday/*.json`, `reports/workflows.json`, `reports/slo.json`.
 
@@ -126,6 +126,8 @@
 ## 6. Postmortem — Băng G2 với client naive (blameless)
 
 *Dùng `make plot` (hình `reports/gameday/G2_overload_storm.png`) và CSV `reports/gameday/naive_G2_overload_storm_timeseries.csv`.*
+
+![Biểu đồ chuỗi thời gian sự cố G2 Overload Storm (Naive Client)](gameday/G2_overload_storm.png)
 
 **Tóm tắt (3 câu):**
 Vào giây 120 của kịch bản mô phỏng, nhà cung cấp alpha bị sụt giảm 75% năng lực xử lý phần cứng trong vòng 180 giây. Do phiên bản client naive thực hiện retry 3 tầng cố định, không có circuit breaker và không quan sát header `retry-after`, các request dồn ứ đã tạo thành một cơn bão retry khuếch đại tải lên gấp gần 10 lần. Hệ thống rơi vào trạng thái hỏng hóc tự duy trì (metastable failure), khiến dịch vụ tiếp tục tê liệt thêm 155 giây sau khi hạ tầng phần cứng đã hồi phục hoàn toàn.
