@@ -1,6 +1,6 @@
 # Lab 25B — Report
 
-**Họ tên / nhóm:** Đặng Quốc Cường (2A202602466)  **Commit:** `01256ae`  **Điểm tự động (`make grade`):** 88 / 88 (84/88 public + 4/4 hidden) 
+**Họ tên / nhóm:** Đặng Quốc Cường (2A202602466)  **Commit:** `01256ae`  **Điểm tự động (`make grade`):** 84 / 88 
 
 > Mọi nhận định phải có số. Dán số từ `reports/gameday/*.json`, `reports/workflows.json`, `reports/slo.json`.
 
